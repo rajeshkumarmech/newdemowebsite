@@ -11,22 +11,29 @@
 
 
 
-// src/App.jsx
-
-import React from "react";
 import { FarmersQuoteHero } from "./components/FarmersQuoteHero/FarmersQuoteHero";
+import Navbar from "./components/Navbar";
 
 function App() {
   const handleCtaClick = ({ label, href }) => {
-    // Example: send to analytics / BPO dashboard
     console.log("BPO CTA tracked:", label, href);
-    // e.g. window.dataLayer.push({ event: 'cta_click', label, href });
   };
 
   return (
     <>
-      <FarmersQuoteHero onCtaClick={handleCtaClick} />
-      {/* Other sections like pricing, features, contact can go here */}
+      <Navbar />
+
+      <main>
+        <section id="home">
+          <FarmersQuoteHero onCtaClick={handleCtaClick} />
+        </section>
+
+        {/* Other sections */}
+        {/* <section id="services">...</section> */}
+        {/* <section id="about">...</section> */}
+        {/* <section id="testimonials">...</section> */}
+        {/* <section id="contact">...</section> */}
+      </main>
     </>
   );
 }
